@@ -1,0 +1,496 @@
+
+* {
+  box-sizing: border-box;
+}
+
+/* พื้นหลังและกรอบเว็บไซต์ */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eee5ff, #ffdff0);
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.card {
+  width: 390px;
+  max-width: 100%;
+  padding: 32px 24px;
+  border-radius: 30px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 15px 40px #b9a2d055;
+}
+
+.eyebrow {
+  color: #a37abb;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h1 {
+  color: #805ca8;
+  font-size: 24px;
+}
+
+h2 {
+  color: #a37abb;
+  font-size: 19px;
+}
+
+h3 {
+  color: #a26fb2;
+  font-size: 17px;
+}
+
+p {
+  color: #777;
+  line-height: 1.8;
+}
+
+/* ปุ่ม */
+button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  background: #8064a8;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6d5395;
+}
+
+button:focus-visible,
+.cute-img:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #a855f7;
+  outline-offset: 4px;
+}
+
+/* พื้นที่รูป Kuromi */
+.gif-area {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.cute-img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+  cursor: pointer;
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* โบว์และดาวบนรูป */
+.gif-area::before,
+.gif-area::after {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gif-area::before {
+  content: "🎀";
+  top: 10px;
+  left: 15px;
+  font-size: 30px;
+  animation: twinkle 1.5s infinite;
+}
+
+.gif-area::after {
+  content: "✨";
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* Kuromi เด้งเมื่อกด */
+@keyframes kuromiBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  40% {
+    transform: translateY(-18px) scale(1.08);
+  }
+
+  70% {
+    transform: translateY(0) scale(0.95);
+  }
+}
+
+.cute-img.kuromi-bounce {
+  animation: kuromiBounce 0.6s ease;
+}
+
+/* กล่องคำพูด Kuromi */
+.kuromi-speech {
+  position: relative;
+  width: 260px;
+  max-width: 100%;
+  margin: 18px auto 0;
+  padding: 14px 18px;
+  border: 2px solid #e7b9e9;
+  border-radius: 20px;
+  background: #ffe5f5;
+  color: #9156a4;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.6;
+  box-shadow: 0 5px 15px #b17fc333;
+}
+
+.kuromi-speech::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #e7b9e9;
+}
+
+/* กล่องข้อความกำลังใจ */
+.love-message {
+  margin-top: 20px;
+  padding: 0;
+  border-radius: 20px;
+  background: #ffe4f1;
+  color: #a0528a;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.love-message:not(:empty) {
+  padding: 20px;
+}
+
+.love-message.pop-again {
+  animation: popUp 0.45s ease;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* หัวใจและอีโมจิลอย */
+.heart {
+  position: fixed;
+  bottom: -35px;
+  z-index: 999;
+  font-size: 30px;
+  pointer-events: none;
+  animation: floatUp 3.8s ease-out forwards;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-115vh) rotate(45deg);
+  }
+}
+
+/* เอฟเฟกต์พิเศษตอนเปิดจดหมาย */
+.heart.letter-heart {
+  z-index: 9999;
+  animation: letterFly 5s ease-out forwards;
+}
+
+
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh);
+  }
+}
+
+
+/* จดหมายลับ */
+.secret-letter {
+  margin-top: 20px;
+}
+
+.secret-letter summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 25px;
+  border-radius: 20px;
+  background: #f1dafa;
+  color: #714d91;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+.secret-letter summary::-webkit-details-marker {
+  display: none;
+}
+
+.secret-letter summary:hover {
+  background: #e9c9f5;
+}
+
+/* ตัวซองจดหมาย */
+.envelope-icon {
+  position: relative;
+  display: block;
+  width: 110px;
+  height: 70px;
+  border-radius: 6px;
+  background: #d49bea;
+  box-shadow: 0 8px 20px #a46aba55;
+  perspective: 500px;
+}
+
+/* ฝาซองจดหมาย */
+.envelope-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 65px;
+  background: #b97bd8;
+  clip-path: polygon(0 0, 100% 0, 50% 85%);
+  transform-origin: top center;
+  transition: transform 0.8s ease;
+  z-index: 2;
+}
+
+/* หัวใจสีม่วงกลางซอง */
+.envelope-icon::after {
+  content: "♥";
+  position: absolute;
+  left: 50%;
+  top: calc(45% + 8px);
+  transform: translate(-50%, -50%);
+  color: #9333ea;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 2px 5px #b983df;
+  z-index: 3;
+  transition: opacity 0.25s;
+}
+
+/* เปิดฝาซอง */
+.secret-letter[open] .envelope-icon::before {
+  transform: rotateX(180deg);
+}
+
+.secret-letter[open] .envelope-icon::after {
+  opacity: 0;
+}
+
+.letter-label {
+  color: #8054a5;
+  font-size: 16px;
+}
+
+/* ข้อความในจดหมาย */
+.letter-content {
+  margin-top: 15px;
+  padding: 22px;
+  border: 2px dashed #d9a7e4;
+  border-radius: 20px;
+  background: #fff1fa;
+}
+
+.secret-letter[open] .letter-content {
+  animation: letterAppear 0.9s ease both;
+}
+
+@keyframes letterAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-25px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* GIF ซ้ายและขวาของจดหมาย */
+.letter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.letter-header h2 {
+  flex: 1;
+  margin: 0;
+  color: #9c61ae;
+  font-size: 18px;
+  text-align: center;
+}
+
+.letter-gif {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.letter-content h3 {
+  color: #a26fb2;
+}
+
+/* ดาวตามเมาส์ */
+.mouse-sparkle {
+  position: fixed;
+  z-index: 9999;
+  font-size: 22px;
+  pointer-events: none;
+  animation: sparkleFade 1s ease-out forwards;
+}
+
+@keyframes sparkleFade {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform:
+      translate(-50%, -85px)
+      scale(0.3)
+      rotate(45deg);
+  }
+}
+
+/* ปรับให้เหมาะกับหน้าจอมือถือ */
+@media (max-width: 400px) {
+  .card {
+    padding: 25px 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .letter-content {
+    padding: 16px;
+  }
+
+  .letter-gif {
+    width: 42px;
+    height: 42px;
+  }
+
+  .letter-header h2 {
+    font-size: 16px;
+  }
+
+  .kuromi-speech {
+    font-size: 14px;
+  }
+}
+
+/* อีโมจิตอนเปิดจดหมายลับ */
+.heart.letter-heart {
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  pointer-events: none;
+  animation: letterFly 5s ease-out forwards;
+}
+
+@keyframes letterFly {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh) rotate(360deg);
+  }
+}
+
+/* ห้ามหัวใจและอีโมจิหมุนเด็ดขาด */
+
+.heart,
+.heart.letter-heart {
+  animation-name: floatStraightOnly !important;
+  animation-duration: 3s !important;
+  animation-timing-function: linear !important;
+  animation-fill-mode: forwards !important;
+}
+
+/* ลอยขึ้นตรง ๆ ไม่มีการหมุน */
+
+@keyframes floatStraightOnly {
+
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh);
+  }
+
+}

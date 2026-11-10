@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For มิล 💜</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">♡ For มิล ♡</p>
+
+    <div class="gif-area">
+      <img
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDRvYWowemJtcDBtZXlzdGZocnZoYzh6a3Fpb3p0aGJmbmFzM2g4bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QbQeDAEspJ5oCeGWJk/giphy.gif"
+        class="cute-img"
+        alt="Kuromi กดเพื่อรับกำลังใจ"
+        role="button"
+        tabindex="0"
+        onclick="kuromiTalk()"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();kuromiTalk()}"
+      >
+
+      <div id="kuromiSpeech" class="kuromi-speech" aria-live="polite">
+        🎀 กดที่ Kuromi เพื่อรับกำลังใจ!
+      </div>
+    </div>
+
+    <h1>เป็นไงบ้าง วันนี้เหนื่อยไหม💜</h1>
+    <h2>โดนดุบ้างอะป่าวครับวันนี้ มิลคนเก่งสู้ๆนะค้าบ ตั้งใจทำงานนะ</h2>
+
+    <button type="button" onclick="showLove()">
+      กดรับกำลังใจ💗
+    </button>
+
+    <div id="loveMessage" class="love-message" aria-live="polite"></div>
+
+    <details class="secret-letter" ontoggle="openSecret(this)">
+      <summary>
+        <span class="envelope-icon" aria-hidden="true"></span>
+        <span class="letter-label">
+          💌 กดเปิด / ปิดจดหมายลับ
+        </span>
+      </summary>
+
+      <div class="letter-content">
+        <div class="letter-header">
+          <img
+            src="https://media.tenor.com/AP7DLtNJEOsAAAAj/kuromi-cute-kuromi.gif"
+            class="letter-gif"
+            alt="Kuromi ด้านซ้าย"
+          >
+
+          <h2>ถึง 💜</h2>
+
+          <img
+            src="https://media.tenor.com/C_P5PvT8xE8AAAAi/kumori-corner-peak.gif"
+            class="letter-gif"
+            alt="Kuromi ด้านขวา"
+          >
+        </div>
+
+        <p>
+          วันนี้ทำงานเหนื่อยไหม ตากแดดบ้างอะป่าว
+          <br>
+          ไม่รู้ว่างานจะยากขนาดไหน
+          อยากให้รู้ว่ามิลทำดีที่สุดแล้วนะ เก่งขึ้นทุกๆวันเลย
+        </p>
+
+        <p>
+          อย่าลืมพักผ่อน ทานข้าวให้ตรงเวลา ที่สำคัญอย่าลืมเติมน้ำหวานด้วยยย
+          พลับพร้อมสปอย น้ำหวาน 24 ชั่วโมง
+          <br>
+          และดูแลตัวเองด้วยนะ 🌷
+        </p>
+
+        <h3>
+          สู้ๆนะค้าบ พลับเป็นกำลังใจให้เสมอนะ💜
+        </h3>
+      </div>
+    </details>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

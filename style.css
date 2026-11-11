@@ -315,7 +315,7 @@ summary:focus-visible {
 
 /* หัวใจสีม่วงกลางซอง */
 .envelope-icon::after {
-  content: "♥";
+  content: "💜";
   position: absolute;
   left: 50%;
   top: calc(45% + 8px);
